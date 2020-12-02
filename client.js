@@ -11,14 +11,16 @@ const connect = function() {
   // interpret incoming data as text
   conn.setEncoding('utf8'); 
   
-  conn.on('connect', (connect) => {
-    console.log("Successfully connected to game server", connect)
+  conn.on('connect', () => {
+    console.log("Successfully connected to game server");
+    conn.write("Name: ACH");
+      setInterval(() => conn.write("Move: up"), 50)
+      // setTimeout(() => conn.write("Move: up"), 100)
+      // setTimeout(() => conn.write("Move: up"), 150)
+      // setTimeout(() => conn.write("Move: up"), 200) 
   });
 
-  conn.on('connect', (connect) => {
-    conn.write("Name: ACH", connect)
-  })
-  
+
   conn.on('data', (data) => {
     console.log('Server says: ', data);
   });
