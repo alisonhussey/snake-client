@@ -14,7 +14,7 @@ const connect = function() {
   conn.on('connect', () => {
     console.log("Successfully connected to game server");
     conn.write("Name: ACH");
-      setInterval(() => conn.write("Move: up"), 50)
+      // setInterval(() => conn.write("Move: up"), 50)
       // setTimeout(() => conn.write("Move: up"), 100)
       // setTimeout(() => conn.write("Move: up"), 150)
       // setTimeout(() => conn.write("Move: up"), 200) 
